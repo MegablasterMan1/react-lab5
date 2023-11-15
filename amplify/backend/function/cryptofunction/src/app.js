@@ -7,8 +7,6 @@ See the License for the specific language governing permissions and limitations 
 */
 
 
-
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
@@ -26,9 +24,6 @@ app.use(function(req, res, next) {
 });
 
 
-
-
-
 // Creating coins route to API
 app.get('/coins', function(req, res) {
   const coins = [
@@ -40,10 +35,6 @@ app.get('/coins', function(req, res) {
     coins
   })
 })
-
-
-
-
 
 
 /**********************
