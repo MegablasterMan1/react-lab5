@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { Amplify } from 'aws-amplify';
 
 test('renders learn react link', () => {
   render(<App />);
