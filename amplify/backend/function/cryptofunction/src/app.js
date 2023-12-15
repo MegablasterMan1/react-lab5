@@ -25,6 +25,20 @@ app.use(function(req, res, next) {
 
 
 // Creating coins route to API
+
+
+// app.get('/born', function(req, res) {
+//   const coins = [
+//     { name: 'Bitcoin', symbol: 'BTC', price_usd: "10000" },
+//     { name: 'Ethereum', symbol: 'ETH', price_usd: "400" },
+//     { name: 'Litecoin', symbol: 'LTC', price_usd: "150" }
+//   ]
+//   res.json({
+//     coins
+//   })
+// })
+
+
 // Import axios
 const axios = require('axios')
 
@@ -48,6 +62,7 @@ app.get('/coins', function(req, res) {
 })
 
 
+
 app.get('/born', async function(req, res) {
   // Define base url
   let apiUrl = `https://api.github.com/users/MegablasterMan1`
@@ -61,9 +76,73 @@ app.get('/born', async function(req, res) {
   // Call API and return response
   axios.get(apiUrl)
   .then(response => {
-    res.json({  born: response.data})
+    res.json({  born: response})
   })
   .catch(err => res.json({ error: err }))
 })
 
+
+/**********************
+ * Example get method *
+ **********************/
+
+// app.get('/item', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'get call succeed!', url: req.url});
+// });
+
+// app.get('/item/*', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'get call succeed!', url: req.url});
+// });
+
+/****************************
+* Example post method *
+****************************/
+
+// app.post('/item', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'post call succeed!', url: req.url, body: req.body})
+// });
+
+// app.post('/item/*', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'post call succeed!', url: req.url, body: req.body})
+// });
+
+/****************************
+* Example put method *
+****************************/
+
+// app.put('/item', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'put call succeed!', url: req.url, body: req.body})
+// });
+
+// app.put('/item/*', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'put call succeed!', url: req.url, body: req.body})
+// });
+
+/****************************
+* Example delete method *
+****************************/
+
+// app.delete('/item', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'delete call succeed!', url: req.url});
+// });
+
+// app.delete('/item/*', function(req, res) {
+//   // Add your code here
+//   res.json({success: 'delete call succeed!', url: req.url});
+// });
+
+// app.listen(3000, function() {
+//     console.log("App started")
+// });
+
+// Export the app object. When executing the application local this does nothing. However,
+// to port it to AWS Lambda we will create a wrapper around that will load the app from
+// this file
 module.exports = app

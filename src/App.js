@@ -27,6 +27,13 @@ const App = () => {
     updateloading(false);
   }
 
+
+
+
+
+
+
+
   // Create coins variable and set to empty array
   const [born, updateBorn] = useState([])
 
@@ -42,6 +49,16 @@ const App = () => {
   }, [])
 
 
+
+
+
+
+
+
+
+
+
+
   // Project 3 Modifications
   const [username, setUsername] = useState([]);
 
@@ -49,7 +66,7 @@ const App = () => {
     try {
       const res = await API.get('cryptoapi', `/born?username=${username}`);
       setUsername(res.data);
-      console.log(res);
+      console.log(res.data);
     } catch (error) {
       console.error('Error fetching GitHub data:', error);
     }
@@ -58,6 +75,12 @@ const App = () => {
   useEffect(() => {
     fetchGitHubData();
   }, [username]);
+
+
+
+
+
+
 
 
   // Call fetchCoins function when component loads
@@ -89,7 +112,7 @@ const App = () => {
       }
     </div>
     
-    <p>{`${born.login}'s account was created on, ${born.created_at}`}</p>
+    <p>{`${born.login} - ${'Loading...'}`}</p>
     </>
   );
 }
