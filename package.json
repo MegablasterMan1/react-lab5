@@ -2,6 +2,7 @@
   "name": "react-lab5",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://MegablasterMan1.github.io/amplify/react-lab5",
   "dependencies": {
     "@aws-amplify/ui-react": "^6.0.6",
     "@testing-library/jest-dom": "^5.17.0",
