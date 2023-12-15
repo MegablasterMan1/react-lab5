@@ -64,22 +64,37 @@ app.get('/coins', function(req, res) {
 
 
 app.get('/born', async function(req, res) {
-  // Check if there are any query string parameters
-  // If so, reset the base url to include them
-  
-  if (req.apiGateway && req.apiGateway.event.queryStringParameters) {
-   apiUrl = `https://api.github.com/users/MegablasterMan1`
-   const response = await axios.get(apiUrl);
-   console.log(response);
-  }
+  const data = [
+    { name: 'dfsafdsfads', symbol: 'dC', price_usd: "154325340000" },
+    { name: 'Efdaseum', symbol: 'ETH', price_usd: "400" },
+    { name: 'Litedcoin', symbol: 'LTC', price_usd: "150" }
+  ]
+  res.json({
+    data
+  })
 
-  // Call API and return response
-  axios.get(apiUrl)
-    .then(response => {
-      res.json({  data: response.data.data })
-    })
-    .catch(err => res.json({ error: err }))
+
 })
+
+
+
+
+//   // Check if there are any query string parameters
+//   // If so, reset the base url to include them
+  
+//   if (req.apiGateway && req.apiGateway.event.queryStringParameters) {
+//    apiUrl = `https://api.github.com/users/MegablasterMan1`
+//    const response = await axios.get(apiUrl);
+//    console.log(response);
+//   }
+
+//   // Call API and return response
+//   axios.get(apiUrl)
+//     .then(response => {
+//       res.json({  data: response.data.data })
+//     })
+//     .catch(err => res.json({ error: err }))
+// })
 
 
 

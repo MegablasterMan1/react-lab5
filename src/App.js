@@ -2,7 +2,6 @@ import './App.css';
 
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
-import axios from 'axios';
 
 const App = () => {
   // Create coins variable and set to empty array
