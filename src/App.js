@@ -65,8 +65,8 @@ const App = () => {
   const fetchGitHubData = async () => {
     try {
       const res = await API.get('cryptoapi', `/born?username=${username}`);
-      setUserData(res.data.born);
-      console.log(userData);
+      setUsername(res.data);
+      console.log(res.data);
     } catch (error) {
       console.error('Error fetching GitHub data:', error);
     }
