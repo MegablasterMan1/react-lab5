@@ -2,6 +2,7 @@ import './App.css';
 
 import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
+import axios from 'axios';
 
 const App = () => {
   // Create coins variable and set to empty array
@@ -27,12 +28,33 @@ const App = () => {
     updateloading(false);
   }
 
+
+
+
+
+
+  // Project 3 Modifications
+  const [username, setUsername] = useState([]);
+
+  const fetchGitHubData = async () => {
+      const res = await API.get('cryptoapi', `/born?username=${username}`);
+      setUsername(res.data);
+      console.log(username);
+  };
+  useEffect(() => {fetchGitHubData()}, [username]);
+
+
+
+
+
+
+
+
   // Call fetchCoins function when component loads
-  useEffect(() => {
-    fetchCoins()
-  }, [])
+  useEffect(() => {fetchCoins()}, [])
 
   return (
+    <>
     <div className="App">
       {/* Add input fields to the UI for user input */}
         <input
@@ -56,7 +78,9 @@ const App = () => {
         ))
       }
     </div>
+    
+    <p>{`${username} - ${'Loading...'}`}</p>
+    </>
   );
 }
-
 export default App;
