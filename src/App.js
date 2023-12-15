@@ -60,13 +60,3 @@ const App = () => {
 }
 
 export default App;
-
-/*
-
----- Deploying to Github Pages ----
-1) Add Homepage to package.json
-2) Npm run build
-3) Push Project
-4) Github repository settings - Options Tob - Branch and Docs folder
-
-*/
