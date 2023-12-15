@@ -63,11 +63,18 @@ const App = () => {
   const [username, setUsername] = useState([]);
 
   const fetchGitHubData = async () => {
+    try {
       const res = await API.get('cryptoapi', `/born?username=${username}`);
-      setUsername(res.data);
-      console.log(username);
+      setUserData(res.data.born);
+      console.log(userData);
+    } catch (error) {
+      console.error('Error fetching GitHub data:', error);
+    }
   };
-  useEffect(() => {fetchGitHubData()}, [username]);
+  
+  useEffect(() => {
+    fetchGitHubData();
+  }, [username]);
 
 
 
