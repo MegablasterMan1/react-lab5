@@ -64,17 +64,37 @@ app.get('/coins', function(req, res) {
 
 
 app.get('/born', async function(req, res) {
-  const data = [
-    { name: 'dfsafdsfads', symbol: 'dC', price_usd: "154325340000" },
-    { name: 'Efdaseum', symbol: 'ETH', price_usd: "400" },
-    { name: 'Litedcoin', symbol: 'LTC', price_usd: "150" }
-  ]
-  res.json({
-    data
+  // Define base url
+  let apiUrl = `https://api.github.com/users/MegablasterMan1`
+
+  // Check if there are any query string parameters
+  // If so, reset the base url to include them
+  if (req.apiGateway && req.apiGateway.event.queryStringParameters) {
+    apiUrl = `https://api.github.com/users/MegablasterMan1`
+   }
+
+  // Call API and return response
+  axios.get(apiUrl)
+  .then(response => {
+    res.json({  born: response.data.data })
   })
-
-
+  .catch(err => res.json({ error: err }))
 })
+
+
+
+
+  // const data = [
+  //   { name: 'dfsafdsfads', symbol: 'dC', price_usd: "154325340000" },
+  //   { name: 'Efdaseum', symbol: 'ETH', price_usd: "400" },
+  //   { name: 'Litedcoin', symbol: 'LTC', price_usd: "150" }
+  // ]
+  // res.json({
+  //   data
+  // })
+
+
+
 
 
 

@@ -32,6 +32,33 @@ const App = () => {
 
 
 
+
+
+  // Create coins variable and set to empty array
+  const [born, updateBorn] = useState([])
+
+  // Define function to all API
+  async function fetchData() {
+    const data = await API.get('cryptoapi', '/born')
+    updateBorn(data.born)
+  }
+
+  // Call fetchCoins function when component loads
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+
+
+
+
+
+
+
+
+
+
+
   // Project 3 Modifications
   const [username, setUsername] = useState([]);
 
@@ -78,7 +105,7 @@ const App = () => {
       }
     </div>
     
-    <p>{`${username} - ${'Loading...'}`}</p>
+    <p>{`${born.login} - ${'Loading...'}`}</p>
     </>
   );
 }
