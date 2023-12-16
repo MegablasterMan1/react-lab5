@@ -61,9 +61,12 @@ const App = () => {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   //Memes
 >>>>>>> parent of 7617194 (Merge branch 'master' into other)
+=======
+>>>>>>> parent of 0df3b88 (Project 3 Finished)
 =======
 >>>>>>> parent of 0df3b88 (Project 3 Finished)
   // Project 3 Modifications
