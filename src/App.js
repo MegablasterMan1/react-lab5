@@ -41,6 +41,7 @@ const App = () => {
     fetchData()
   }, [])
 
+<<<<<<< HEAD
 
 
 
@@ -52,6 +53,9 @@ const App = () => {
 
 
 
+=======
+  //Memes
+>>>>>>> parent of 7617194 (Merge branch 'master' into other)
   // Project 3 Modifications
   const [username, setUsername] = useState([]);
 
